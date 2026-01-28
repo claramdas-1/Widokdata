@@ -427,3 +427,42 @@ button:active {
 .btn-servicios:hover {
   color: #572D16;
 }
+
+/*INDEX RESPONSIVE*/
+
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .box-texto {
+    order: 2;
+  }
+
+  .gente {
+    order: 1;
+  }
+
+  button,
+  .btn-servicios {
+    align-self: center;
+  }
+}
+
+
+
+/*SOBRE NOSOTROS RESPONSIVE*/
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-text h2 {
+    text-align: center;
+  }
+}
