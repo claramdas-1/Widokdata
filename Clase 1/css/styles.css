@@ -1,0 +1,429 @@
+/*RESET*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*BASE GENERAL*/
+body {
+  background-color: #EBE1D8;
+  font-family: 'Inter', sans-serif;
+  color: #054D4C;
+  line-height: 1.6;
+}
+
+main {
+  padding: 0 24px;
+}
+
+/*HEADER & NAV*/
+header {
+  position: sticky;
+  top: 0;
+  background-color: #CAD6CA;
+  text-align: center;
+  padding: 20px;
+  z-index: 10;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  color: #805f64;
+  margin-bottom: 8px;
+}
+
+nav {
+  margin-top: 15px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  list-style: none;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: #443B60;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+nav ul a:hover {
+  text-decoration: underline;
+}
+
+/*SECCIONES GENERALES*/
+section {
+  padding: 60px 0;
+}
+
+section h2 {
+  font-size: 18px;
+  color: #572D16;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+section p {
+  margin-bottom: 20px;
+}
+
+/*GRID 2*/
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.box-texto {
+  background-color: #CAD6CA;
+  padding: 40px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.box-texto h2 {
+  text-align: left;
+}
+
+.box-texto p {
+  margin-bottom: 30px;
+}
+
+/*IMÁGENES*/
+.gente {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/*BOTONES*/
+button {
+  background-color: #805f64;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 14px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/*GRID 3 COLUMNAS*/
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/*CARDS*/
+.card {
+  background-color: #CAD6CA;
+  padding: 24px;
+  border-radius: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.card h3 {
+  font-size: 16px;
+  color: #572D16;
+}
+
+.card p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/*LISTAS (para "Para quién es")*/
+ul {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/*CTA FINAL*/
+.cta {
+  background-color: #CAD6CA;
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 20px;
+  max-width: 1100px;
+  margin: 60px auto;
+}
+
+.cta h2 {
+  margin-bottom: 15px;
+}
+
+.cta button {
+  align-self: center;
+}
+
+/*FOOTER*/
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 14px;
+}
+
+/*RESPONSIVE*/
+@media (max-width: 768px) {
+
+  nav ul {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .box-texto {
+    order: 2;
+    text-align: center;
+  }
+
+  .gente {
+    order: 1;
+    height: auto;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  button {
+    align-self: center;
+  }
+}
+
+/*BOTON SOLICITAR INFORMACION*/
+.btn {
+  border-radius: 24px;
+  padding: 12px 24px;
+  font-size: 14px;
+}
+
+.btn-outline-dark {
+  color: #805f64;
+  border-color: #805f64;
+}
+
+.btn-outline-dark:hover {
+  background-color: #805f64;
+  color: white;
+}
+
+/*FOOTER*/
+.footer {
+  background-color: #CAD6CA;
+  padding: 60px 24px 30px;
+  margin-top: 60px;
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer h4 {
+  font-size: 16px;
+  color: #572D16;
+  margin-bottom: 12px;
+}
+
+.footer p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  margin-top: 40px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+/*DISENO LINKS HEADER*/
+nav ul a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #805f64;
+  transition: width 0.3s ease;
+}
+
+nav ul a:hover::after {
+  width: 100%;
+}
+
+/*BOTONES*/
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/*CARDS*/
+.card:hover {
+  transform: translateY(-6px);
+  transition: transform 0.3s ease;
+}
+
+/*SOBRE NOSOTROS*/
+.about {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+/* GRID*/
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* FLEX*/
+.about-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #CAD6CA;
+  padding: 40px;
+  border-radius: 16px;
+}
+
+.about-text h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  margin-bottom: 16px;
+}
+
+.about-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.about-list li {
+  font-size: 14px;
+}
+
+/* Imagen */
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-text h2 {
+    text-align: center;
+  }
+
+  .about-text button {
+    align-self: center;
+  }
+}
+
+/* ======================
+   BOTÓN SERVICIOS
+====================== */
+.btn-servicios {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #805f64;
+
+  position: relative;
+  padding-bottom: 4px;
+}
+
+/* Línea base */
+.btn-servicios::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40%;
+  height: 2px;
+  background-color: #805f64;
+  transition: width 0.3s ease;
+}
+
+/* Hover */
+.btn-servicios:hover::after {
+  width: 100%;
+}
+
+.btn-servicios:hover {
+  color: #572D16;
+}
