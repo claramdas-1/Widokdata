@@ -7,9 +7,9 @@
 
 /*BASE GENERAL*/
 body {
-  background-color: #EBE1D8;
+  background-color: #d6d3cd;
   font-family: 'Inter', sans-serif;
-  color: #054D4C;
+  color: black;
   line-height: 1.6;
 }
 
@@ -18,42 +18,121 @@ main {
 }
 
 /*HEADER & NAV*/
-header {
-  position: sticky;
-  top: 0;
-  background-color: #CAD6CA;
-  text-align: center;
-  padding: 20px;
-  z-index: 10;
+/* ======================
+   HEADER – WIDOK DATA
+====================== */
+
+.site-header {
+  background-color: #f1efe7;
+  border-bottom: 1px solid #000;
 }
 
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 40px;
-  color: #805f64;
-  margin-bottom: 8px;
-}
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 40px;
 
-nav {
-  margin-top: 15px;
-}
-
-nav ul {
   display: flex;
-  justify-content: center;
-  gap: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+/* LOGO */
+.logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+/* NAV */
+.main-nav ul {
+  display: flex;
+  gap: 36px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-nav ul a {
+.main-nav a {
   text-decoration: none;
-  color: #443B60;
-  font-weight: 600;
-  font-size: 15px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 6px;
 }
 
-nav ul a:hover {
-  text-decoration: underline;
+/* Hover */
+.main-nav a:hover {
+  color: #000;
+}
+
+/* Activo */
+.main-nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+
+.main-nav a {
+  white-space: nowrap;
+}
+
+/* Responsive header */
+
+@media (max-width: 768px) {
+
+  .header-container {
+    flex-direction: row; /* 🔑 mantiene logo a la izquierda */
+    padding: 14px 20px;
+  }
+
+  /* El menú pasa a overlay */
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f1efe7;
+    border-bottom: 1px solid #000;
+    display: none;
+  }
+
+  .main-nav.show {
+    display: block;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0;
+  }
+}
+
+.site-header {
+  position: relative; /* necesario para el menú desplegable */
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
 }
 
 /*SECCIONES GENERALES*/
@@ -134,7 +213,7 @@ button:hover {
 
 /*CARDS*/
 .card {
-  background-color: #CAD6CA;
+  background-color: #f1efe7;
   padding: 24px;
   border-radius: 16px;
   display: grid;
@@ -465,4 +544,100 @@ button:active {
   .about-text h2 {
     text-align: center;
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+h1,
+h2,
+.box-texto p {
+  animation: fadeIn 1s ease-in;
+  animation-delay: 0.2s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cta button {
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* ======================
+   WHATSAPP FLOAT
+====================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+
+  background-color: #25D366;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 28px;
+  height: 28px;
+}
+
+/* Hover */
+.whatsapp-float:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 48px;
+    height: 48px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .whatsapp-float img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@keyframes whatsapp-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.whatsapp-float {
+  animation: whatsapp-float 3s ease-in-out infinite;
 }
